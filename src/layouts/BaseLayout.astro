@@ -1,5 +1,6 @@
 ---
 import theData from "../data/theData.json";
+import Nav from "../components/Nav.astro";
 const clientName = "polytechnic Pros";
 const theCurrentYear = new Date().getFullYear();
 
@@ -20,13 +21,15 @@ const data = await response.json();
   <body>
     <a href="/">Home</a>
     <a href="/about/">About</a>
-
+    <!-- nav -->
+    <Nav />
     <h1>{data[0].title}</h1>
     <p>{data[0].body}</p>
-
     <!-- <h1> {clientName}</h1>
 	<p>EWU is now called {clientName}</p> -->
     <p>The mascot is {theData.name} and is {theData.age}</p>
     <slot />
+    <!-- footer -->
+    <footer>Footer</footer>
   </body>
 </html>
